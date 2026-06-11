@@ -128,6 +128,18 @@ img { max-width: 100%; height: auto; display: block; }
 
 .atx-section-sub--inv { color: rgba(255, 255, 255, 0.62); }
 
+/* Visually hidden (accessible) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 /* Highlight span in headline */
 .atx-highlight {
   position: relative;
@@ -1097,13 +1109,521 @@ img { max-width: 100%; height: auto; display: block; }
 
 
 /* ─────────────────────────────────────────────
-   12. RESPONSIVE
-   ───────────────────────────────────────────── */
+    12. SKIP TO CONTENT
+    ───────────────────────────────────────────── */
+.atx-skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  padding: 12px 24px;
+  background: var(--atx-text);
+  color: var(--atx-white);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: var(--r-sm);
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.atx-skip-link:focus {
+  top: 16px;
+  outline: 2px solid var(--atx-primary);
+  outline-offset: 2px;
+}
+
+/* ─────────────────────────────────────────────
+    13. CHALLENGES SECTION
+    ───────────────────────────────────────────── */
+.atx-challenges {
+  padding: 70px 20px;
+  background: var(--atx-white);
+  text-align: center;
+}
+
+.atx-challenges-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.atx-challenges-eyebrow {
+  color: var(--atx-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  font-size: 0.74rem;
+}
+
+.atx-challenges-title {
+  color: var(--atx-text);
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  line-height: 1.2;
+}
+
+.atx-challenges-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.atx-challenge-card {
+  background: var(--atx-bg);
+  padding: 30px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: left;
+  border: 1px solid var(--atx-border);
+  transition: transform var(--t-base), box-shadow var(--t-base);
+}
+
+.atx-challenge-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.atx-challenge-icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  line-height: 1;
+}
+
+.atx-challenge-name {
+  color: var(--atx-text);
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.atx-challenge-desc {
+  color: var(--atx-text-muted);
+  font-size: 0.93rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+/* ─────────────────────────────────────────────
+    14. CALCULATOR SECTION
+    ───────────────────────────────────────────── */
+.atx-calculator {
+  background: var(--atx-text);
+  color: var(--atx-white);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.atx-calculator-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.atx-calc-title {
+  color: var(--atx-primary);
+  margin-bottom: 10px;
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  font-weight: 800;
+}
+
+.atx-calc-sub {
+  color: #bdc3c7;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.atx-calc-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.atx-calc-range-group {
+  margin-bottom: 20px;
+}
+
+.atx-calc-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.atx-calc-value {
+  color: var(--atx-primary);
+  font-weight: 700;
+}
+
+.atx-calc-value--danger {
+  color: #e74c3c;
+}
+
+.atx-calc-range {
+  width: 100%;
+  accent-color: var(--atx-primary);
+  height: 6px;
+  cursor: pointer;
+}
+
+.atx-calc-range--danger {
+  accent-color: #e74c3c;
+}
+
+.atx-calc-result {
+  background: rgba(26, 188, 156, 0.1);
+  border-left: 4px solid var(--atx-primary);
+  padding: 15px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.atx-calc-result-text {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #bdc3c7;
+}
+
+.atx-calc-result-amount {
+  margin: 5px 0 0 0;
+  color: #ef5757;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 800;
+}
+
+.atx-calc-result-note {
+  margin: 5px 0 0 0;
+  font-size: 0.85rem;
+  color: var(--atx-primary);
+  font-weight: 700;
+}
+
+
+/* ─────────────────────────────────────────────
+    15. PRICING SECTION
+    ───────────────────────────────────────────── */
+.atx-pricing {
+  padding: 80px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.atx-pricing-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.atx-pricing-title {
+  color: var(--atx-text);
+  margin-bottom: 10px;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+}
+
+.atx-pricing-sub {
+  color: var(--atx-text-muted);
+  margin-bottom: 40px;
+  font-size: 1.05rem;
+}
+
+.atx-pricing-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.atx-price-card {
+  background: var(--atx-white);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  width: 300px;
+  text-align: left;
+  border: 1px solid #eef2f5;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--t-base), box-shadow var(--t-base);
+}
+
+.atx-price-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.atx-price-card--popular {
+  border: 2px solid var(--atx-primary);
+  box-shadow: 0 10px 25px rgba(26, 188, 156, 0.15);
+  position: relative;
+}
+
+.atx-price-card--popular:hover {
+  box-shadow: var(--shadow-grn);
+}
+
+.atx-price-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: var(--atx-primary);
+  color: var(--atx-white);
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+}
+
+.atx-price-name {
+  color: var(--atx-text);
+  margin-top: 0;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.atx-price-desc {
+  color: var(--atx-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.atx-price-amount {
+  margin: 20px 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--atx-text);
+}
+
+.atx-price-amount-sublabel {
+  color: var(--atx-text-muted);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.atx-price-divider {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 20px 0;
+}
+
+.atx-price-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+  font-size: 0.9rem;
+  line-height: 2;
+  flex-grow: 1;
+  color: #555;
+}
+
+.atx-price-list li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.atx-price-list .bi-check2 {
+  color: var(--atx-primary);
+  font-weight: 700;
+}
+
+.atx-price-list .atx-price-na {
+  color: #ccc;
+}
+
+.atx-price-list .atx-price-na .bi-check2 {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.atx-btn-price {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--atx-primary);
+  background: transparent;
+  color: var(--atx-primary);
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--atx-font);
+  transition: background var(--t-fast), color var(--t-fast);
+}
+
+.atx-btn-price:hover {
+  background: var(--atx-primary);
+  color: var(--atx-white);
+}
+
+.atx-btn-price--solid {
+  border: none;
+  background: var(--atx-primary);
+  color: var(--atx-white);
+  box-shadow: 0 4px 10px rgba(26, 188, 156, 0.3);
+}
+
+.atx-btn-price--solid:hover {
+  background: var(--atx-primary-dk);
+  color: var(--atx-white);
+}
+
+
+/* ─────────────────────────────────────────────
+    16. COMPARISON TABLE SECTION
+    ───────────────────────────────────────────── */
+.atx-compare {
+  padding: 70px 20px;
+  background: var(--atx-bg);
+  text-align: center;
+}
+
+.atx-compare-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.atx-compare-title {
+  color: var(--atx-text);
+  margin-bottom: 35px;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+}
+
+.atx-compare-table-wrap {
+  background: var(--atx-white);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  overflow-x: auto;
+}
+
+.atx-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+  min-width: 560px;
+}
+
+.atx-compare-table th,
+.atx-compare-table td {
+  padding: 15px 20px;
+}
+
+.atx-compare-table thead tr {
+  background: var(--atx-text);
+  color: var(--atx-white);
+}
+
+.atx-compare-table thead th:last-child {
+  background: var(--atx-primary);
+}
+
+.atx-compare-table tbody tr {
+  border-bottom: 1px solid #eef2f5;
+}
+
+.atx-compare-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.atx-compare-label {
+  font-weight: 700;
+  color: var(--atx-text);
+}
+
+.atx-compare-old {
+  color: var(--atx-text-muted);
+}
+
+.atx-compare-new {
+  color: var(--atx-text);
+  font-weight: 500;
+}
+
+
+/* ─────────────────────────────────────────────
+    17. FAQ SECTION
+    ───────────────────────────────────────────── */
+.atx-faq {
+  padding: 80px 20px;
+  background: var(--atx-white);
+}
+
+.atx-faq-inner {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.atx-faq-title {
+  text-align: center;
+  color: var(--atx-text);
+  margin-bottom: 40px;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+}
+
+.atx-faq-item {
+  border-bottom: 1px solid #eef2f5;
+  padding: 15px 0;
+}
+
+.atx-faq-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--atx-text);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-family: var(--atx-font);
+  transition: color var(--t-fast);
+}
+
+.atx-faq-toggle:hover {
+  color: var(--atx-primary);
+}
+
+.atx-faq-icon {
+  transition: transform 0.3s ease;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.atx-faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  color: var(--atx-text-muted);
+  font-size: 0.95rem;
+  padding-left: 2px;
+}
+
+.atx-faq-content p {
+  margin: 10px 0 5px 0;
+  line-height: 1.7;
+}
+
+
+/* ─────────────────────────────────────────────
+    18. RESPONSIVE
+    ───────────────────────────────────────────── */
 @media (min-width: 992px) {
   .atx-steps-track { display: block; }
 }
 
 @media (max-width: 991.98px) {
+  .atx-challenge-card { width: 100%; max-width: 400px; }
+  .atx-price-card { width: 100%; max-width: 400px; }
+  .atx-calc-range { height: 8px; }
+
   .atx-hero {
     padding: 110px 0 60px;
     text-align: center;

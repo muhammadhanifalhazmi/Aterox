@@ -1,12 +1,13 @@
 /**
  * ATEROX FnB Landing Page — js/main.js
  * Features:
- *   1. Navbar shadow on scroll
- *   2. Smooth scroll for all internal links (with navbar offset)
- *   3. Active nav link tracking
- *   4. Scroll reveal (IntersectionObserver)
- *   5. Workflow step-line fill animation
- *   6. Mobile navbar auto-close on link click
+ * 1. Navbar shadow on scroll
+ * 2. Smooth scroll for all internal links (with navbar offset)
+ * 3. Active nav link tracking
+ * 4. Scroll reveal (IntersectionObserver)
+ * 5. Workflow step-line fill animation
+ * 6. Mobile navbar auto-close on link click
+ * 7. Interaktif Kalkulator Kerugian & FAQ Accordion
  */
 
 (function () {
@@ -131,7 +132,6 @@
 
   /* ─────────────────────────────────────────────
      5. WORKFLOW STEP-LINE FILL ANIMATION
-        Triggers when the Workflow section enters viewport
      ───────────────────────────────────────────── */
   if (stepsLine && workflowSec && 'IntersectionObserver' in window) {
 
@@ -139,7 +139,6 @@
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            // Short delay so the steps have started their reveal first
             setTimeout(function () {
               stepsLine.classList.add('animated');
             }, 300);
@@ -156,7 +155,6 @@
 
   /* ─────────────────────────────────────────────
      6. HERO MOCKUP — subtle parallax on mouse move
-        (desktop only, opt-in via prefers-reduced-motion check)
      ───────────────────────────────────────────── */
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const mockupWeb    = document.querySelector('.atx-mockup-img--web');
@@ -168,11 +166,11 @@
       const rect   = heroSection.getBoundingClientRect();
       const centerX = rect.width  / 2;
       const centerY = rect.height / 2;
-      const dx = (e.clientX - rect.left  - centerX) / centerX; // -1 to 1
-      const dy = (e.clientY - rect.top   - centerY) / centerY; // -1 to 1
+      const dx = (e.clientX - rect.left  - centerX) / centerX;
+      const dy = (e.clientY - rect.top   - centerY) / centerY;
 
-      const rotY = 8  + dx * -4; // subtle: base 8deg ± 4
-      const rotX = 3  + dy *  2; // subtle: base 3deg ± 2
+      const rotY = 8  + dx * -4;
+      const rotX = 3  + dy * 2;
 
       mockupWeb.style.transform =
         `perspective(1000px) rotateY(${rotY}deg) rotateX(${rotX}deg)`;
@@ -184,58 +182,65 @@
     });
   }
 
+
+  /* ─────────────────────────────────────────────
+     7. LOGIKA KALKULATOR KERUGIAN
+     ───────────────────────────────────────────── */
+  const omsetRange = document.getElementById('omset-range');
+  const wasteRange = document.getElementById('waste-range');
+  const omsetVal = document.getElementById('omset-val');
+  const wasteVal = document.getElementById('waste-val');
+  const lossResult = document.getElementById('loss-result');
+
+  function hitungKerugian() {
+      if (!omsetRange || !wasteRange) return;
+      const omset = parseInt(omsetRange.value);
+      const wastePercent = parseInt(wasteRange.value);
+      
+      if (omsetVal) omsetVal.innerText = 'Rp ' + omset.toLocaleString('id-ID');
+      if (wasteVal) wasteVal.innerText = wastePercent + '%';
+      
+      const totalLoss = omset * (wastePercent / 100);
+      if (lossResult) lossResult.innerText = 'Rp ' + totalLoss.toLocaleString('id-ID');
+  }
+
+  if (omsetRange && wasteRange) {
+      omsetRange.addEventListener('input', hitungKerugian);
+      wasteRange.addEventListener('input', hitungKerugian);
+  }
+
+
+  /* ─────────────────────────────────────────────
+     8. LOGIKA FAQ ACCORDION
+     ───────────────────────────────────────────── */
+  const faqToggles = document.querySelectorAll('.atx-faq-toggle');
+
+  faqToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+          const content = toggle.nextElementSibling;
+          const icon = toggle.querySelector('.atx-faq-icon');
+          const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+          
+          document.querySelectorAll('.atx-faq-content').forEach(el => {
+              el.style.maxHeight = '0px';
+          });
+          document.querySelectorAll('.atx-faq-icon').forEach(el => {
+              el.innerText = '+';
+              el.style.transform = 'rotate(0deg)';
+          });
+          document.querySelectorAll('.atx-faq-toggle').forEach(el => {
+              el.setAttribute('aria-expanded', 'false');
+          });
+          
+          if (!isOpen) {
+              content.style.maxHeight = content.scrollHeight + 'px';
+              if (icon) {
+                  icon.innerText = '-';
+                  icon.style.transform = 'rotate(180deg)';
+              }
+              toggle.setAttribute('aria-expanded', 'true');
+          }
+      });
+  });
+
 })();
-
-// ==================== LOGIKA KALKULATOR KERUGIAN ====================
-const omsetRange = document.getElementById('omset-range');
-const wasteRange = document.getElementById('waste-range');
-const omsetVal = document.getElementById('omset-val');
-const wasteVal = document.getElementById('waste-val');
-const lossResult = document.getElementById('loss-result');
-
-function hitungKerugian() {
-    const omset = parseInt(omsetRange.value);
-    const wastePercent = parseInt(wasteRange.value);
-    
-    // Update Teks Tampilan Slider
-    omsetVal.innerText = 'Rp ' + omset.toLocaleString('id-ID');
-    wasteVal.innerText = wastePercent + '%';
-    
-    // Hitung Estimasi Kerugian Mentah
-    const totalLoss = omset * (wastePercent / 100);
-    lossResult.innerText = 'Rp ' + totalLoss.toLocaleString('id-ID');
-}
-
-if(omsetRange && wasteRange) {
-    omsetRange.addEventListener('input', hitungKerugian);
-    wasteRange.addEventListener('input', hitungKerugian);
-}
-
-// ==================== LOGIKA FAQ ACCORDION ====================
-const faqToggles = document.querySelectorAll('.faq-toggle');
-
-faqToggles.forEach(toggle => {
-    toggle.addEventListener('click', () => {
-        const content = toggle.nextElementSibling;
-        const icon = toggle.querySelector('.faq-icon');
-        
-        // Cek apakah item ini sudah terbuka
-        if (content.style.maxHeight && content.style.maxHeight !== '0px') {
-            content.style.maxHeight = '0px';
-            icon.innerText = '+';
-            icon.style.transform = 'rotate(0deg)';
-        } else {
-            // Tutup semua FAQ lain yang mungkin kebuka (Optional, biar rapi)
-            document.querySelectorAll('.faq-content').forEach(el => el.style.maxHeight = '0px');
-            document.querySelectorAll('.faq-icon').forEach(el => {
-                el.innerText = '+';
-                el.style.transform = 'rotate(0deg)';
-            });
-            
-            // Buka item yang di-klik
-            content.style.maxHeight = content.scrollHeight + 'px';
-            icon.innerText = '-';
-            icon.style.transform = 'rotate(180deg)';
-        }
-    });
-});

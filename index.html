@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://cdn.jsdelivr.net https://fonts.gstatic.com; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; img-src 'self' https://aterox.vercel.app data:; connect-src 'self'; frame-src 'none'; object-src 'none'" />
   <meta name="google-site-verification" content="tjIPMtoNu61ejQGD7Z-PdQDX59WvonxQVuf8WNWSYKI" />
-  <title>Aterox</title>
+  <title>Aterox - Solusi Manajemen Stok & HPP Bisnis FnB</title>
   <meta name="description" content="Aterox membantu restoran, kafe, dan bisnis kuliner mengontrol stok bahan baku, memangkas food waste, dan menganalisis HPP secara real-time — dari dapur hingga dashboard owner." />
 
-  <meta name="description" content="Aterox oleh Xynco Labs - Platform manajemen bahan baku, stok opname, dan supply chain real-time terlengkap untuk bisnis kuliner, restoran, dan kafe.">
   <meta name="keywords" content="Aterox, Xynco Labs, manajemen bahan baku, aplikasi stok fnb, inventory management restoran, stock opname kafe, aplikasi fnb">
   <meta name="author" content="Xynco Labs">
 
@@ -17,6 +17,13 @@
   <meta property="og:description" content="Digitalisasi stock opname dan kontrol HPP outlet kuliner Anda dalam satu genggaman bersama Aterox.">
   <meta property="og:image" content="https://aterox.vercel.app/assets/img/favicon.png">
 
+  <link rel="canonical" href="https://aterox.vercel.app/" />
+
+  <!-- Preconnect for 3rd-party resources -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Bootstrap Icons -->
@@ -24,10 +31,34 @@
   <!-- Google Fonts: Plus Jakarta Sans -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Aterox",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, Android",
+    "description": "Platform manajemen stok dan HPP untuk bisnis FnB Indonesia.",
+    "author": {
+      "@type": "Organization",
+      "name": "Xynco Labs"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "IDR"
+    }
+  }
+  </script>
 </head>
 <body>
+
+  <!-- Skip to content link (accessibility) -->
+  <a href="#hero" class="atx-skip-link">Langsung ke konten utama</a>
 
   <!-- ================================================
        NAVBAR
@@ -142,6 +173,9 @@
                 <img
                   src="assets/img/web-preview.png"
                   alt="Aterox Web Admin Dashboard — tampilan monitoring stok dan HPP"
+                  width="720"
+                  height="450"
+                  loading="lazy"
                   class="atx-mockup-img atx-mockup-img--web"
                 />
               </div>
@@ -151,6 +185,9 @@
                 <img
                   src="assets/img/mobile-preview.png"
                   alt="Aterox Mobile App — tampilan stock opname cepat untuk kru dapur"
+                  width="260"
+                  height="540"
+                  loading="lazy"
                   class="atx-mockup-img atx-mockup-img--mobile"
                 />
               </div>
@@ -176,6 +213,33 @@
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <section class="atx-challenges" id="challenges" aria-labelledby="challenges-title">
+      <div class="atx-challenges-inner">
+        <p class="atx-challenges-eyebrow">Tantangan Bisnis</p>
+        <h2 class="atx-challenges-title" id="challenges-title">Kenapa Mengelola Resto & Kafe Itu Pusing?</h2>
+
+        <div class="atx-challenges-grid">
+          <article class="atx-challenge-card">
+            <div class="atx-challenge-icon" aria-hidden="true">🕶️</div>
+            <h3 class="atx-challenge-name">Kebocoran Stok</h3>
+            <p class="atx-challenge-desc">Bahan baku sering berkurang misterius di dapur atau porsi menu tidak konsisten dengan input penjualan di kasir.</p>
+          </article>
+
+          <article class="atx-challenge-card">
+            <div class="atx-challenge-icon" aria-hidden="true">📉</div>
+            <h3 class="atx-challenge-name">Buta Angka HPP</h3>
+            <p class="atx-challenge-desc">Harga bahan baku di pasar tidak stabil, membuat Anda menebak-nebak profit margin bersih harian tanpa data pasti.</p>
+          </article>
+
+          <article class="atx-challenge-card">
+            <div class="atx-challenge-icon" aria-hidden="true">🍅</div>
+            <h3 class="atx-challenge-name">Food Waste Menumpuk</h3>
+            <p class="atx-challenge-desc">Membuang bahan baku mahal (susu, daging, sirup) secara cuma-cuma akibat pelacakan tanggal kedaluwarsa yang buruk.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -400,7 +464,7 @@
                 <li><i class="bi bi-check2" aria-hidden="true"></i> Manajemen supplier & purchase order</li>
                 <li><i class="bi bi-check2" aria-hidden="true"></i> Laporan otomatis terjadwal</li>
               </ul>
-              <a href="#" class="btn atx-btn-primary atx-btn-action w-100">
+              <a href="https://app.aterox.vercel.app" target="_blank" rel="noopener noreferrer" class="btn atx-btn-primary atx-btn-action w-100">
                 <i class="bi bi-box-arrow-up-right me-2"></i>Buka Dashboard Owner / Manager
               </a>
               <p class="atx-action-note">Gratis 14 hari, tidak perlu kartu kredit.</p>
@@ -427,7 +491,7 @@
                 <li><i class="bi bi-check2" aria-hidden="true"></i> Offline-ready, sync otomatis</li>
                 <li><i class="bi bi-check2" aria-hidden="true"></i> Notifikasi tugas & reminder opname</li>
               </ul>
-              <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer"
+              <a href="https://play.google.com/store/apps/details?id=com.aterox.app" target="_blank" rel="noopener noreferrer"
                  class="btn atx-btn-dark atx-btn-action w-100">
                 <i class="bi bi-google-play me-2"></i>Download di Play Store
               </a>
@@ -458,106 +522,153 @@
       </div>
     </section>
 
-    <section class="calculator-section" style="background: #2c3e50; color: #fff; padding: 60px 20px; text-align: center;">
-        <div style="max-width: 600px; margin: 0 auto;">
-            <h2 style="color: #1abc9c; margin-bottom: 10px;">Cek Potensi Kerugian Dapur Anda</h2>
-            <p style="color: #bdc3c7; margin-bottom: 30px;">Banyak owner kuliner tidak sadar uangnya "dibuang" di tempat sampah akibat stok bocor dan busuk.</p>
-            
-            <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px; text-align: left;">
-                <div style="margin-bottom: 20px;">
-                    <label style="display: block; margin-bottom: 8px;">Omset Bulanan Outlet Anda: <span id="omset-val" style="color: #1abc9c; font-weight: bold;">Rp 50,000,000</span></label>
-                    <input type="range" id="omset-range" min="10000000" max="300000000" step="5000000" value="50000000" style="width: 100%; accent-color: #1abc9c;">
-                </div>
-                
-                <div style="margin-bottom: 25px;">
-                    <label style="display: block; margin-bottom: 8px;">Perkiraan Bahan Terbuang/Bocor (Waste Rate): <span id="waste-val" style="color: #e74c3c; font-weight: bold;">5%</span></label>
-                    <input type="range" id="waste-range" min="2" max="20" step="1" value="5" style="width: 100%; accent-color: #e74c3c;">
-                </div>
-                
-                <div style="background: rgba(26, 188, 156, 0.1); border-left: 4px solid #1abc9c; padding: 15px; border-radius: 4px; text-align: center;">
-                    <p style="margin: 0; font-size: 0.95rem; color: #bdc3c7;">Uang Anda yang Terbuang Sia-sia Sebulan:</p>
-                    <h3 id="loss-result" style="margin: 5px 0 0 0; color: #ef5757; font-size: 1.8rem;">Rp 2,500,000</h3>
-                    <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: #1abc9c; font-weight: bold;">Dengan Aterox, kerugian ini bisa dipangkas hingga 80%!</p>
-                </div>
-            </div>
+    <section class="atx-calculator" id="calculator" aria-labelledby="calc-title">
+      <div class="atx-calculator-inner">
+        <h2 class="atx-calc-title" id="calc-title">Cek Potensi Kerugian Dapur Anda</h2>
+        <p class="atx-calc-sub">Banyak owner kuliner tidak sadar uangnya "dibuang" di tempat sampah akibat stok bocor dan busuk.</p>
+
+        <div class="atx-calc-box">
+          <div class="atx-calc-range-group">
+            <label class="atx-calc-label" for="omset-range">
+              Omset Bulanan Outlet Anda: <span class="atx-calc-value" id="omset-val">Rp 50,000,000</span>
+            </label>
+            <input type="range" id="omset-range" class="atx-calc-range" min="10000000" max="300000000" step="5000000" value="50000000" />
+          </div>
+
+          <div class="atx-calc-range-group">
+            <label class="atx-calc-label" for="waste-range">
+              Perkiraan Bahan Terbuang/Bocor (Waste Rate): <span class="atx-calc-value atx-calc-value--danger" id="waste-val">5%</span>
+            </label>
+            <input type="range" id="waste-range" class="atx-calc-range atx-calc-range--danger" min="2" max="20" step="1" value="5" />
+          </div>
+
+          <div class="atx-calc-result">
+            <p class="atx-calc-result-text">Uang Anda yang Terbuang Sia-sia Sebulan:</p>
+            <h3 class="atx-calc-result-amount" id="loss-result">Rp 2,500,000</h3>
+            <p class="atx-calc-result-note">Dengan Aterox, kerugian ini bisa dipangkas hingga 80%!</p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section class="pricing-section" style="padding: 80px 20px; background: #f9f9f9; text-align: center;">
-        <div style="max-width: 1100px; margin: 0 auto;">
-            <h2 style="color: #2c3e50; margin-bottom: 10px;">Skema Harga Yang Transparan</h2>
-            <p style="color: #7f8c8d; margin-bottom: 40px;">Mulai gratis untuk outlet pertama Anda. Upgrade kapan saja sesuai pertumbuhan bisnis.</p>
-            
-            <div class="pricing-grid" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center;">
-                <div class="price-card" style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); width: 300px; text-align: left; border: 1px solid #eef2f5;">
-                    <h3 style="color: #2c3e50; margin-top: 0;">Starter (UMKM)</h3>
-                    <p style="color: #7f8c8d; font-size: 0.9rem;">Cocok untuk rintisan kedai kopi tunggal atau umkm baru.</p>
-                    <div style="margin: 20px 0;"><span style="font-size: 1.8rem; font-weight: bold; color: #2c3e50;">Gratis</span><span style="color: #7f8c8d;"> / Selamanya</span></div>
-                    <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-                    <ul style="list-style: none; padding: 0; margin: 0 0 30px 0; color: #555; font-size: 0.9rem; line-height: 2;">
-                        <li>✓ 1 Outlet Maksimal</li>
-                        <li>✓ Kelola Stok Masuk & Keluar</li>
-                        <li>✓ Fitur Kasir & Dapur Basic</li>
-                        <li style="color: #ccc; text-decoration: line-through;">✕ Smart HPP & Waste Analytics</li>
-                    </ul>
-                    <button style="width: 100%; padding: 10px; border: 2px solid #1abc9c; background: transparent; color: #1abc9c; font-weight: bold; border-radius: 6px; cursor: pointer;">Mulai Sekarang</button>
-                </div>
-                
-                <div class="price-card" style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(26,188,156,0.15); width: 300px; text-align: left; border: 2px solid #1abc9c; position: relative;">
-                    <span style="position: absolute; top: -12px; right: 20px; background: #1abc9c; color: #fff; padding: 4px 12px; font-size: 0.75rem; font-weight: bold; border-radius: 20px;">PALING POPULER</span>
-                    <h3 style="color: #2c3e50; margin-top: 0;">Pro Grow</h3>
-                    <p style="color: #7f8c8d; font-size: 0.9rem;">Pilihan terbaik untuk kafe dan restoran aktif yang mau scale up.</p>
-                    <div style="margin: 20px 0;"><span style="font-size: 1.8rem; font-weight: bold; color: #2c3e50;">Rp 249k</span><span style="color: #7f8c8d;"> / bulan</span></div>
-                    <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-                    <ul style="list-style: none; padding: 0; margin: 0 0 30px 0; color: #555; font-size: 0.9rem; line-height: 2;">
-                        <li>✓ Up to 5 Outlet</li>
-                        <li>✓ Real-Time Stock Synchronization</li>
-                        <li>✓ <strong>Smart HPP & Waste Analytics</strong></li>
-                        <li>✓ Scan Barcode Bahan Mobile App</li>
-                        <li>✓ Laporan Export PDF & Excel</li>
-                    </ul>
-                    <button style="width: 100%; padding: 10px; border: none; background: #1abc9c; color: #fff; font-weight: bold; border-radius: 6px; cursor: pointer; box-shadow: 0 4px 10px rgba(26,188,156,0.3);">Coba Gratis 14 Hari</button>
-                </div>
-            </div>
+    <section class="atx-pricing" id="pricing" aria-labelledby="pricing-title">
+      <div class="atx-pricing-inner">
+        <h2 class="atx-pricing-title" id="pricing-title">Skema Harga Yang Transparan</h2>
+        <p class="atx-pricing-sub">Mulai gratis untuk outlet pertama Anda. Upgrade kapan saja sesuai pertumbuhan bisnis.</p>
+
+        <div class="atx-pricing-grid">
+
+          <article class="atx-price-card">
+            <h3 class="atx-price-name">Starter (UMKM)</h3>
+            <p class="atx-price-desc">Cocok untuk rintisan kedai kopi tunggal atau umkm baru.</p>
+            <div class="atx-price-amount">Gratis <span class="atx-price-amount-sublabel">/ Selamanya</span></div>
+            <hr class="atx-price-divider" />
+            <ul class="atx-price-list">
+              <li><i class="bi bi-check2"></i> 1 Outlet Maksimal</li>
+              <li><i class="bi bi-check2"></i> Kelola Stok Masuk &amp; Keluar</li>
+              <li><i class="bi bi-check2"></i> Fitur Kasir &amp; Dapur Basic</li>
+              <li class="atx-price-na"><i class="bi bi-check2"></i> Smart HPP &amp; Waste Analytics</li>
+            </ul>
+            <button class="atx-btn-price">Mulai Sekarang</button>
+          </article>
+
+          <article class="atx-price-card atx-price-card--popular">
+            <span class="atx-price-badge">PALING POPULER</span>
+            <h3 class="atx-price-name">Pro Grow</h3>
+            <p class="atx-price-desc">Pilihan terbaik untuk kafe dan restoran aktif yang mau scale up.</p>
+            <div class="atx-price-amount">Rp 249k <span class="atx-price-amount-sublabel">/ bulan</span></div>
+            <hr class="atx-price-divider" />
+            <ul class="atx-price-list">
+              <li><i class="bi bi-check2"></i> Up to 5 Outlet</li>
+              <li><i class="bi bi-check2"></i> Real-Time Stock Synchronization</li>
+              <li><i class="bi bi-check2"></i> <strong>Smart HPP &amp; Waste Analytics</strong></li>
+              <li><i class="bi bi-check2"></i> Scan Barcode Bahan Mobile App</li>
+              <li><i class="bi bi-check2"></i> Laporan Export PDF &amp; Excel</li>
+            </ul>
+            <button class="atx-btn-price atx-btn-price--solid">Coba Gratis 14 Hari</button>
+          </article>
+
         </div>
+      </div>
     </section>
 
-    <section class="faq-section" style="padding: 80px 20px; background: #fff;">
-        <div style="max-width: 750px; margin: 0 auto;">
-            <h2 style="text-align: center; color: #2c3e50; margin-bottom: 40px;">Pertanyaan yang Sering Diajukan (FAQ)</h2>
-            
-            <div class="faq-container">
-                <div class="faq-item" style="border-bottom: 1px solid #eef2f5; padding: 15px 0;">
-                    <button class="faq-toggle" style="width: 100%; background: none; border: none; text-align: left; font-size: 1.05rem; font-weight: bold; color: #2c3e50; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 10px 0;">
-                        <span>Apakah aplikasi mobile-nya bisa diakses kalau Wi-Fi dapur mati (Offline Mode)?</span>
-                        <span class="faq-icon" style="transition: transform 0.3s;">+</span>
-                    </button>
-                    <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; color: #7f8c8d; font-size: 0.95rem; padding-left: 2px;">
-                        <p style="margin: 10px 0 5px 0;">Bisa banget! Aplikasi mobile Flutter Aterox dirancang dengan sistem local-caching. Staf tetap bisa melakukan stock opname, scan bahan masuk, dan input laporan waste secara offline. Begitu HP tersambung ke internet, data otomatis tersinkronisasi ke Web Admin secara aman.</p>
-                    </div>
-                </div>
+    <section class="atx-compare" id="compare" aria-labelledby="compare-title">
+      <div class="atx-compare-inner">
+        <h2 class="atx-compare-title" id="compare-title">Ubah Cara Lama ke Cara Modern</h2>
 
-                <div class="faq-item" style="border-bottom: 1px solid #eef2f5; padding: 15px 0;">
-                    <button class="faq-toggle" style="width: 100%; background: none; border: none; text-align: left; font-size: 1.05rem; font-weight: bold; color: #2c3e50; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 10px 0;">
-                        <span>Bagaimana Aterox bisa menghitung HPP secara otomatis?</span>
-                        <span class="faq-icon" style="transition: transform 0.3s;">+</span>
-                    </button>
-                    <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; color: #7f8c8d; font-size: 0.95rem; padding-left: 2px;">
-                        <p style="margin: 10px 0 5px 0;">Sistem kami merekam harga beli dari setiap nota purchasing bahan baku yang masuk ke outlet. Ketika Anda memasukkan resep menu, sistem secara otomatis mengalikan volume bahan yang terpakai dengan harga bahan real-time, memberikan Anda angka Food Cost & HPP yang akurat tanpa Excel rumit.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item" style="border-bottom: 1px solid #eef2f5; padding: 15px 0;">
-                    <button class="faq-toggle" style="width: 100%; background: none; border: none; text-align: left; font-size: 1.05rem; font-weight: bold; color: #2c3e50; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 10px 0;">
-                        <span>Apakah data stok outlet saya aman dari kebocoran?</span>
-                        <span class="faq-icon" style="transition: transform 0.3s;">+</span>
-                    </button>
-                    <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; color: #7f8c8d; font-size: 0.95rem; padding-left: 2px;">
-                        <p style="margin: 10px 0 5px 0;">Keamanan data adalah prioritas utama kami di Xynco Labs. Seluruh data transaksi di-enkripsi penuh dan database kami dipisahkan dengan aturan hak akses (role-based access control). Kru outlet Sidoarjo tidak akan bisa melihat atau memanipulasi data inventaris outlet daerah lain.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="atx-compare-table-wrap">
+          <table class="atx-compare-table">
+            <caption class="visually-hidden">Perbandingan operasional cara lama vs menggunakan Aterox</caption>
+            <thead>
+              <tr>
+                <th scope="col">Operasional</th>
+                <th scope="col">Cara Lama (Excel/Buku)</th>
+                <th scope="col">Pake Aterox</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="atx-compare-label">Stock Opname</th>
+                <td class="atx-compare-old">Butuh 2 jam lebih, outlet terpaksa tutup</td>
+                <td class="atx-compare-new">15 Menit via Mobile App tinggal scan barcode</td>
+              </tr>
+              <tr>
+                <th scope="row" class="atx-compare-label">Kalkulasi HPP</th>
+                <td class="atx-compare-old">Rumus Excel rumit dan rawan salah input</td>
+                <td class="atx-compare-new">Otomatis terhitung real-time dari nota belanja</td>
+              </tr>
+              <tr>
+                <th scope="row" class="atx-compare-label">Multi-Outlet</th>
+                <td class="atx-compare-old">Harus telpon staf atau keliling ke tiap lokasi</td>
+                <td class="atx-compare-new">Konsolidasi data semua outlet dalam 1 dashboard</td>
+              </tr>
+              <tr>
+                <th scope="row" class="atx-compare-label">Kontrol Expired</th>
+                <td class="atx-compare-old">Baru ketahuan pas bahan sudah membusuk</td>
+                <td class="atx-compare-new">Notifikasi sistem sebelum masa kedaluwarsa habis</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
+    </section>
+
+    <section class="atx-faq" id="faq" aria-labelledby="faq-title">
+      <div class="atx-faq-inner">
+        <h2 class="atx-faq-title" id="faq-title">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+
+        <div class="atx-faq-container">
+          <div class="atx-faq-item">
+            <button class="atx-faq-toggle" aria-expanded="false" aria-controls="faq1-content">
+              <span>Apakah aplikasi mobile-nya bisa diakses kalau Wi-Fi dapur mati (Offline Mode)?</span>
+              <span class="atx-faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="atx-faq-content" id="faq1-content" role="region">
+              <p>Bisa banget! Aplikasi mobile Flutter Aterox dirancang dengan sistem local-caching. Staf tetap bisa melakukan stock opname, scan bahan masuk, dan input laporan waste secara offline. Begitu HP tersambung ke internet, data otomatis tersinkronisasi ke Web Admin secara aman.</p>
+            </div>
+          </div>
+
+          <div class="atx-faq-item">
+            <button class="atx-faq-toggle" aria-expanded="false" aria-controls="faq2-content">
+              <span>Bagaimana Aterox bisa menghitung HPP secara otomatis?</span>
+              <span class="atx-faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="atx-faq-content" id="faq2-content" role="region">
+              <p>Sistem kami merekam harga beli dari setiap nota purchasing bahan baku yang masuk ke outlet. Ketika Anda memasukkan resep menu, sistem secara otomatis mengalikan volume bahan yang terpakai dengan harga bahan real-time, memberikan Anda angka Food Cost &amp; HPP yang akurat tanpa Excel rumit.</p>
+            </div>
+          </div>
+
+          <div class="atx-faq-item">
+            <button class="atx-faq-toggle" aria-expanded="false" aria-controls="faq3-content">
+              <span>Apakah data stok outlet saya aman dari kebocoran?</span>
+              <span class="atx-faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="atx-faq-content" id="faq3-content" role="region">
+              <p>Keamanan data adalah prioritas utama kami di Xynco Labs. Seluruh data transaksi di-enkripsi penuh dan database kami dipisahkan dengan aturan hak akses (role-based access control). Kru outlet Sidoarjo tidak akan bisa melihat atau memanipulasi data inventaris outlet daerah lain.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
   </main>
@@ -578,9 +689,9 @@
             Platform manajemen stok dan HPP untuk bisnis FnB modern Indonesia.
           </p>
           <div class="atx-footer-socials" aria-label="Ikuti kami di media sosial">
-            <a href="#" aria-label="Instagram Aterox"><i class="bi bi-instagram"></i></a>
-            <a href="#" aria-label="LinkedIn Xynco Labs"><i class="bi bi-linkedin"></i></a>
-            <a href="#" aria-label="TikTok Aterox"><i class="bi bi-tiktok"></i></a>
+            <a href="https://instagram.com/aterox" target="_blank" rel="noopener noreferrer" aria-label="Instagram Aterox"><i class="bi bi-instagram"></i></a>
+            <a href="https://linkedin.com/company/xynco-labs" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Xynco Labs"><i class="bi bi-linkedin"></i></a>
+            <a href="https://tiktok.com/@aterox" target="_blank" rel="noopener noreferrer" aria-label="TikTok Aterox"><i class="bi bi-tiktok"></i></a>
           </div>
         </div>
 
@@ -630,7 +741,7 @@
   <!-- Bootstrap 5 JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Custom JS -->
-  <script src="main.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 </html>

@@ -15,11 +15,13 @@ aterox-fnb/
 │   └── style.css
 ├── js/
 │   └── main.js
-└── assets/
-    └── img/
-        ├── web-preview.png      ← Screenshot Web Admin Dashboard
-        ├── mobile-preview.png   ← Screenshot Mobile App (portrait)
-        └── (opsional lainnya)
+├── assets/
+│   └── img/
+│       ├── favicon.png
+│       ├── logo.png
+│       ├── web-preview.png      ← Screenshot Web Admin Dashboard
+│       └── mobile-preview.png   ← Screenshot Mobile App (portrait)
+└── .hintrc
 ```
 
 ---
