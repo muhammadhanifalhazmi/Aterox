@@ -243,4 +243,139 @@
       });
   });
 
+
+  /* ─────────────────────────────────────────────
+     9. STATS COUNTER ANIMATION
+     ───────────────────────────────────────────── */
+  const statCounters = document.querySelectorAll('.atx-stat-count');
+
+  if (statCounters.length && 'IntersectionObserver' in window) {
+    const counterObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute('data-target'));
+          const suffix = el.getAttribute('data-suffix') || '';
+          const duration = 2000;
+          const start = performance.now();
+
+          function update(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.round(eased * target);
+            el.textContent = current.toLocaleString('id-ID') + suffix;
+            if (progress < 1) {
+              requestAnimationFrame(update);
+            } else {
+              el.textContent = target.toLocaleString('id-ID') + suffix;
+            }
+          }
+
+          requestAnimationFrame(update);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    statCounters.forEach(function (el) {
+      counterObserver.observe(el);
+    });
+  }
+
+
+  /* ─────────────────────────────────────────────
+     10. FLOATING WHATSAPP — show on scroll
+     ───────────────────────────────────────────── */
+  const waFloat = document.getElementById('waFloat');
+
+  if (waFloat) {
+    function toggleWaFloat() {
+      if (window.scrollY > 400) {
+        waFloat.classList.add('is-visible');
+      } else {
+        waFloat.classList.remove('is-visible');
+      }
+    }
+
+    window.addEventListener('scroll', toggleWaFloat, { passive: true });
+    toggleWaFloat();
+  }
+
+
+  /* ─────────────────────────────────────────────
+     11. BACK TO TOP
+     ───────────────────────────────────────────── */
+  const backToTop = document.getElementById('backToTop');
+
+  if (backToTop) {
+    function toggleBackToTop() {
+      if (window.scrollY > 600) {
+        backToTop.classList.add('is-visible');
+      } else {
+        backToTop.classList.remove('is-visible');
+      }
+    }
+
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    toggleBackToTop();
+  }
+
+
+  /* ─────────────────────────────────────────────
+     12. COOKIE CONSENT
+     ───────────────────────────────────────────── */
+  const cookieConsent = document.getElementById('cookieConsent');
+  const cookieAccept  = document.getElementById('cookieAccept');
+  const cookieDecline = document.getElementById('cookieDecline');
+
+  if (cookieConsent) {
+    if (!localStorage.getItem('atx-cookie')) {
+      setTimeout(function () {
+        cookieConsent.classList.add('is-visible');
+      }, 800);
+    }
+
+    function dismissCookie() {
+      cookieConsent.classList.remove('is-visible');
+      localStorage.setItem('atx-cookie', 'set');
+    }
+
+    if (cookieAccept) {
+      cookieAccept.addEventListener('click', dismissCookie);
+    }
+
+    if (cookieDecline) {
+      cookieDecline.addEventListener('click', dismissCookie);
+    }
+  }
+
+
+  /* ─────────────────────────────────────────────
+     13. NEWSLETTER FORM
+     ───────────────────────────────────────────── */
+  const newsletterForm = document.getElementById('newsletterForm');
+
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const input = document.getElementById('newsletterEmail');
+      const thanks = document.getElementById('newsletterThanks');
+
+      if (input && input.value.trim() && input.checkValidity()) {
+        newsletterForm.style.display = 'none';
+        if (thanks) {
+          thanks.removeAttribute('hidden');
+        }
+      } else {
+        input.focus();
+        input.reportValidity();
+      }
+    });
+  }
+
 })();

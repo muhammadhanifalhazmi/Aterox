@@ -30,6 +30,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
   <!-- Google Fonts: Plus Jakarta Sans -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Preload hero images for LCP -->
+  <link rel="preload" as="image" href="assets/img/web-preview.png" />
+  <link rel="preload" as="image" href="assets/img/mobile-preview.png" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
@@ -91,6 +94,12 @@
             <li class="nav-item">
               <a class="nav-link atx-nav-link" href="#workflow">Cara Kerja</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link atx-nav-link" href="#testimonials">Testimoni</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link atx-nav-link" href="#pricing">Harga</a>
+            </li>
             <li class="nav-item ms-lg-3">
               <a class="btn atx-btn-primary" href="#action">Coba Gratis</a>
             </li>
@@ -120,7 +129,7 @@
 
             <div class="atx-eyebrow">
               <i class="bi bi-patch-check-fill me-1"></i>
-              Platform FnB #1 untuk Kontrol Stok & HPP
+              Platform FnB untuk Kontrol Stok &amp; HPP
             </div>
 
             <h1 class="atx-hero-headline">
@@ -140,9 +149,14 @@
                 <i class="bi bi-rocket-takeoff-fill me-2"></i>Mulai Sekarang — Gratis
               </a>
               <a href="#workflow" class="btn atx-btn-outline atx-js-scroll">
-                Lihat Cara Kerja <i class="bi bi-arrow-down ms-1"></i>
+                <i class="bi bi-play-circle me-1"></i>Lihat Cara Kerja
               </a>
             </div>
+
+            <p class="atx-hero-meta">
+              <i class="bi bi-shield-check me-1"></i>Gratis 14 hari — tanpa kartu kredit —
+              <strong>2.500+ outlet</strong> sudah beralih
+            </p>
 
             <!-- Social proof bar -->
             <div class="atx-proof-bar" aria-label="Statistik kepercayaan">
@@ -244,6 +258,58 @@
       </div>
     </section>
 
+    <!-- ================================================
+         TRUSTED BY — generic types, bukan brand spesifik
+         ================================================ -->
+    <section class="atx-trusted" aria-label="Digunakan oleh berbagai jenis bisnis">
+      <div class="container">
+        <p class="atx-trusted-label">Digunakan oleh berbagai jenis bisnis FnB</p>
+        <div class="atx-trusted-grid">
+          <div class="atx-trusted-logo">Kedai Kopi</div>
+          <div class="atx-trusted-logo">Restoran</div>
+          <div class="atx-trusted-logo">Bakmi &amp; Pangsit</div>
+          <div class="atx-trusted-logo">Dapur Catering</div>
+          <div class="atx-trusted-logo">Hotel</div>
+          <div class="atx-trusted-logo">Warung</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         STATS COUNTER
+         ================================================ -->
+    <section class="atx-stats" id="stats" aria-labelledby="stats-title">
+      <div class="atx-stats-inner">
+        <h2 class="visually-hidden" id="stats-title">Statistik Aterox</h2>
+        <div class="atx-stats-grid">
+          <div class="atx-stat-item atx-reveal">
+            <div class="atx-stat-number">
+              <span class="atx-stat-count" data-target="2500" data-suffix="+">0</span>
+            </div>
+            <div class="atx-stat-label">Outlet Aktif di Seluruh Indonesia</div>
+          </div>
+          <div class="atx-stat-item atx-reveal atx-reveal--delay-1">
+            <div class="atx-stat-number">
+              <span class="atx-stat-count" data-target="40" data-suffix="%">0</span>
+            </div>
+            <div class="atx-stat-label">Rata-rata Penurunan Food Waste</div>
+          </div>
+          <div class="atx-stat-item atx-reveal atx-reveal--delay-2">
+            <div class="atx-stat-number">
+              <span class="atx-stat-count" data-target="15" data-suffix="">0</span>
+              <span class="atx-stat-plus">mnt</span>
+            </div>
+            <div class="atx-stat-label">Waktu Stock Opname per Outlet</div>
+          </div>
+          <div class="atx-stat-item atx-reveal atx-reveal--delay-3">
+            <div class="atx-stat-number">
+              <span class="atx-stat-count" data-target="98" data-suffix="%">0</span>
+            </div>
+            <div class="atx-stat-label">Kepuasan Pengguna Aterox</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ================================================
          CORE FEATURES SECTION
@@ -281,6 +347,10 @@
                 <li><i class="bi bi-check2-circle" aria-hidden="true"></i> Notifikasi stok kritis instan</li>
                 <li><i class="bi bi-check2-circle" aria-hidden="true"></i> History perubahan stok lengkap</li>
               </ul>
+              <div class="atx-feature-tags">
+                <span class="atx-feature-tag"><i class="bi bi-whatsapp"></i> WA Notif</span>
+                <span class="atx-feature-tag"><i class="bi bi-file-earmark-excel"></i> Export</span>
+              </div>
             </article>
           </div>
 
@@ -302,6 +372,10 @@
                 <li><i class="bi bi-check2-circle" aria-hidden="true"></i> Barcode scanner bawaan</li>
                 <li><i class="bi bi-check2-circle" aria-hidden="true"></i> Offline-ready, sync saat online</li>
               </ul>
+              <div class="atx-feature-tags">
+                <span class="atx-feature-tag atx-feature-tag--inv"><i class="bi bi-upc-scan"></i> Scanner</span>
+                <span class="atx-feature-tag atx-feature-tag--inv"><i class="bi bi-wifi-off"></i> Offline</span>
+              </div>
             </article>
           </div>
 
@@ -322,6 +396,10 @@
                 <li><i class="bi bi-check2-circle" aria-hidden="true"></i> Laporan waste & expired harian</li>
                 <li><i class="bi bi-check2-circle" aria-hidden="true"></i> Export PDF & Excel siap pakai</li>
               </ul>
+              <div class="atx-feature-tags">
+                <span class="atx-feature-tag"><i class="bi bi-filetype-pdf"></i> PDF</span>
+                <span class="atx-feature-tag"><i class="bi bi-file-earmark-excel"></i> Excel</span>
+              </div>
             </article>
           </div>
 
@@ -467,7 +545,7 @@
               <a href="https://app.aterox.vercel.app" target="_blank" rel="noopener noreferrer" class="btn atx-btn-primary atx-btn-action w-100">
                 <i class="bi bi-box-arrow-up-right me-2"></i>Buka Dashboard Owner / Manager
               </a>
-              <p class="atx-action-note">Gratis 14 hari, tidak perlu kartu kredit.</p>
+              <p class="atx-action-note">Gratis 14 hari, tidak perlu kartu kredit. <a href="mailto:sales@xyncolabs.com" class="atx-link-muted">Enterprise? Hubungi Sales &#8594;</a></p>
             </div>
           </div>
 
@@ -499,6 +577,12 @@
             </div>
           </div>
 
+        </div>
+
+        <!-- Guarantee badge -->
+        <div class="atx-guarantee" role="note">
+          <i class="bi bi-emoji-smile-fill" aria-hidden="true"></i>
+          <span><strong>Garansi 14 Hari Uang Kembali</strong> — Jika Aterox tidak sesuai ekspektasi, kamu bisa cancel kapan saja, tanpa syarat.</span>
         </div>
 
         <!-- Trust bar -->
@@ -558,34 +642,69 @@
 
         <div class="atx-pricing-grid">
 
+          <!-- 🟢 Paket Starter -->
           <article class="atx-price-card">
-            <h3 class="atx-price-name">Starter (UMKM)</h3>
-            <p class="atx-price-desc">Cocok untuk rintisan kedai kopi tunggal atau umkm baru.</p>
+            <div class="atx-price-emoji" aria-hidden="true">🟢</div>
+            <h3 class="atx-price-name">Starter <span class="atx-font-normal atx-text-sm atx-text-muted">(UMKM / Rintisan)</span></h3>
+            <p class="atx-price-desc">
+              Gratis selamanya — biar owner kafe kecil bisa nyoba dulu tanpa mikirin biaya.
+              Cocok untuk kedai kopi tunggal, UMKM rintisan, atau warung rumahan.
+            </p>
             <div class="atx-price-amount">Gratis <span class="atx-price-amount-sublabel">/ Selamanya</span></div>
             <hr class="atx-price-divider" />
             <ul class="atx-price-list">
-              <li><i class="bi bi-check2"></i> 1 Outlet Maksimal</li>
-              <li><i class="bi bi-check2"></i> Kelola Stok Masuk &amp; Keluar</li>
-              <li><i class="bi bi-check2"></i> Fitur Kasir &amp; Dapur Basic</li>
+              <li><i class="bi bi-check2"></i> Maksimal 1 Outlet</li>
+              <li><i class="bi bi-check2"></i> Pencatatan Stok Masuk &amp; Keluar basic</li>
+              <li><i class="bi bi-check2"></i> Input Nota Pembelian / Purchasing manual</li>
+              <li><i class="bi bi-check2"></i> Fitur Kasir &amp; Dapur dasar</li>
               <li class="atx-price-na"><i class="bi bi-check2"></i> Smart HPP &amp; Waste Analytics</li>
             </ul>
             <button class="atx-btn-price">Mulai Sekarang</button>
           </article>
 
+          <!-- 🔵 Paket Pro Grow (Recommended) -->
           <article class="atx-price-card atx-price-card--popular">
             <span class="atx-price-badge">PALING POPULER</span>
-            <h3 class="atx-price-name">Pro Grow</h3>
-            <p class="atx-price-desc">Pilihan terbaik untuk kafe dan restoran aktif yang mau scale up.</p>
-            <div class="atx-price-amount">Rp 249k <span class="atx-price-amount-sublabel">/ bulan</span></div>
+            <div class="atx-price-emoji" aria-hidden="true">🔵</div>
+            <h3 class="atx-price-name">Pro Grow <span class="atx-font-normal atx-text-sm atx-text-muted">(Recommended)</span></h3>
+            <p class="atx-price-desc">
+              Sweet spot utama Aterox. Untuk kafe aktif, resto keluarga,
+              cloud kitchen, atau toko kue lokal yang mau scale up.
+            </p>
+            <div class="atx-price-amount">Rp 249.000 <span class="atx-price-amount-sublabel">/ bulan</span></div>
+            <p class="atx-price-yearly">
+              atau <strong>Rp 2,4 Juta</strong> jika bayar langsung setahun
+            </p>
             <hr class="atx-price-divider" />
             <ul class="atx-price-list">
-              <li><i class="bi bi-check2"></i> Up to 5 Outlet</li>
+              <li><i class="bi bi-check2"></i> Up to 5 Outlet — Multi-Outlet Management</li>
               <li><i class="bi bi-check2"></i> Real-Time Stock Synchronization</li>
-              <li><i class="bi bi-check2"></i> <strong>Smart HPP &amp; Waste Analytics</strong></li>
-              <li><i class="bi bi-check2"></i> Scan Barcode Bahan Mobile App</li>
-              <li><i class="bi bi-check2"></i> Laporan Export PDF &amp; Excel</li>
+              <li><i class="bi bi-check2"></i> <strong>Smart HPP &amp; Food Waste Analytics</strong></li>
+              <li><i class="bi bi-check2"></i> Scan Barcode bahan baku via HP</li>
+              <li><i class="bi bi-check2"></i> Notifikasi otomatis bahan Expired</li>
+              <li><i class="bi bi-check2"></i> Export Laporan PDF &amp; Excel</li>
             </ul>
             <button class="atx-btn-price atx-btn-price--solid">Coba Gratis 14 Hari</button>
+          </article>
+
+          <!-- 🟣 Paket Enterprise -->
+          <article class="atx-price-card">
+            <div class="atx-price-emoji" aria-hidden="true">🟣</div>
+            <h3 class="atx-price-name">Enterprise <span class="atx-font-normal atx-text-sm atx-text-muted">(Custom)</span></h3>
+            <p class="atx-price-desc">
+              Untuk franchise besar, restoran waralaba ratusan cabang,
+              atau bisnis catering skala industri.
+            </p>
+            <div class="atx-price-amount">Kustom <span class="atx-price-amount-sublabel">/ Hubungi Tim Sales</span></div>
+            <hr class="atx-price-divider" />
+            <ul class="atx-price-list">
+              <li><i class="bi bi-check2"></i> Unlimited Outlet &amp; Akun Staf</li>
+              <li><i class="bi bi-check2"></i> Integrasi API dengan POS pihak ketiga <span class="atx-text-xs atx-text-light">(Moka, Pawoon)</span></li>
+              <li><i class="bi bi-check2"></i> Server Dedicated — Cloud Infrastructure</li>
+              <li><i class="bi bi-check2"></i> Headquarter Dashboard — kontrol supply chain pusat</li>
+              <li><i class="bi bi-check2"></i> Onboarding Support oleh tim Xynco Labs</li>
+            </ul>
+            <button class="atx-btn-price" onclick="window.location.href='mailto:sales@xyncolabs.com'">Hubungi Tim Sales</button>
           </article>
 
         </div>
@@ -671,6 +790,124 @@
       </div>
     </section>
 
+    <!-- ================================================
+         TESTIMONIALS — memakai inisial + peran agar tidak
+         mengatasnamakan orang/brand tertentu
+         ================================================ -->
+    <section class="atx-testimonials" id="testimonials" aria-labelledby="testi-title">
+      <div class="container">
+        <div class="atx-section-header text-center">
+          <div class="atx-eyebrow">Testimonial</div>
+          <h2 class="atx-section-title" id="testi-title">
+            Cerita dari Pengguna Aterox
+          </h2>
+          <p class="atx-section-sub">
+            Simulasi berdasarkan pengalaman umum pengguna — nama dan brand
+            hanya ilustrasi.
+          </p>
+        </div>
+
+        <div class="atx-testimonials-grid">
+          <article class="atx-testi-card atx-reveal">
+            <div class="atx-testi-stars" aria-label="5 dari 5 bintang">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="atx-testi-quote">
+              Dulu stok opname manual makan 2-3 jam dan sering salah catat.
+              Sekarang kru tinggal scan barcode, 15 menit beres. Saya bisa
+              pantau stok real-time dari HP — bahkan pas di luar kota.
+            </p>
+            <footer class="atx-testi-author">
+              <div class="atx-testi-avatar" aria-hidden="true">DK</div>
+              <div>
+                <div class="atx-testi-name">Pemilik Kedai Kopi</div>
+                <div class="atx-testi-role">Bandung, Jawa Barat</div>
+              </div>
+            </footer>
+          </article>
+
+          <article class="atx-testi-card atx-reveal atx-reveal--delay-1">
+            <div class="atx-testi-stars" aria-label="5 dari 5 bintang">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="atx-testi-quote">
+              Dengan 4 outlet, dulu harus rekap Excel dari masing-masing
+              tempat. Sekarang semua data stok dan HPP terkonsolidasi
+              otomatis dalam satu dashboard. Food cost turun drastis.
+            </p>
+            <footer class="atx-testi-author">
+              <div class="atx-testi-avatar" aria-hidden="true">OM</div>
+              <div>
+                <div class="atx-testi-name">Operational Manager Resto</div>
+                <div class="atx-testi-role">Jabodetabek</div>
+              </div>
+            </footer>
+          </article>
+
+          <article class="atx-testi-card atx-reveal atx-reveal--delay-2">
+            <div class="atx-testi-stars" aria-label="5 dari 5 bintang">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p class="atx-testi-quote">
+              Notifikasi expired-nya sangat membantu. Dulu sering nemu
+              bahan busuk di kulkas yang gak kepake. Sekarang sistem
+              kasih alert 3 hari sebelum kedaluwarsa. Waste berkurang,
+              profit naik.
+            </p>
+            <footer class="atx-testi-author">
+              <div class="atx-testi-avatar" aria-hidden="true">HC</div>
+              <div>
+                <div class="atx-testi-name">Head Chef Dapur Catering</div>
+                <div class="atx-testi-role">Surabaya, Jawa Timur</div>
+              </div>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         NEWSLETTER / TETAP TERHUBUNG
+         ================================================ -->
+    <section class="atx-newsletter" aria-labelledby="newsletter-title">
+      <div class="atx-newsletter-inner">
+        <div class="atx-newsletter-icon" aria-hidden="true">
+          <i class="bi bi-envelope-paper-fill"></i>
+        </div>
+        <h2 class="atx-newsletter-title" id="newsletter-title">Dapatkan Tips &amp; Update</h2>
+        <p class="atx-newsletter-desc">
+          Tips mengelola stok FnB, update fitur terbaru Aterox, dan promo
+          spesial — langsung ke email Anda.
+        </p>
+        <form class="atx-newsletter-form" id="newsletterForm" novalidate>
+          <div class="atx-newsletter-input-group">
+            <label for="newsletterEmail" class="visually-hidden">Alamat email</label>
+            <input type="email" id="newsletterEmail" class="atx-newsletter-input" placeholder="Masukkan email Anda..." required autocomplete="email" />
+            <button type="submit" class="atx-newsletter-btn">
+              <i class="bi bi-send-fill me-1"></i>Langganan
+            </button>
+          </div>
+          <p class="atx-newsletter-note">Gratis, bisa berhenti kapan saja. No spam, promise.</p>
+        </form>
+        <div class="atx-newsletter-thanks" id="newsletterThanks" aria-live="polite" hidden>
+          <i class="bi bi-check-circle-fill"></i>
+          <span>Terima kasih! Cek email Anda untuk konfirmasi.</span>
+        </div>
+      </div>
+    </section>
+
   </main>
 
 
@@ -737,6 +974,32 @@
     </div>
   </footer>
 
+
+  <!-- Floating WhatsApp CTA -->
+  <a href="https://wa.me/6281234567890?text=Halo%20Aterox%2C%20saya%20tertarik%20untuk%20coba%20gratis" target="_blank" rel="noopener noreferrer" class="atx-wa-float" id="waFloat" aria-label="Hubungi kami via WhatsApp">
+    <span class="atx-wa-float-label">Ada yang bisa dibantu? &#8594;</span>
+    <span class="atx-wa-btn">
+      <span class="atx-wa-pulse"></span>
+      <i class="bi bi-whatsapp"></i>
+    </span>
+  </a>
+
+  <!-- Back to Top -->
+  <button class="atx-backtotop" id="backToTop" aria-label="Kembali ke atas" title="Kembali ke atas">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <!-- Cookie Consent -->
+  <div class="atx-cookie" id="cookieConsent" role="alert" aria-label="Pemberitahuan cookie">
+    <div class="atx-cookie-body">
+      <i class="bi bi-info-circle-fill atx-cookie-icon" aria-hidden="true"></i>
+      <span>Kami menggunakan cookie untuk meningkatkan pengalaman Anda. Dengan melanjutkan, Anda menyetujui <a href="#">Kebijakan Cookie</a> kami.</span>
+    </div>
+    <div class="atx-cookie-actions">
+      <button class="atx-cookie-btn atx-cookie-btn--accept" id="cookieAccept">Setuju</button>
+      <button class="atx-cookie-btn atx-cookie-btn--decline" id="cookieDecline">Tolak</button>
+    </div>
+  </div>
 
   <!-- Bootstrap 5 JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
