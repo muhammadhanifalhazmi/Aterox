@@ -458,6 +458,108 @@
       </div>
     </section>
 
+    <section class="calculator-section" style="background: #2c3e50; color: #fff; padding: 60px 20px; text-align: center;">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <h2 style="color: #1abc9c; margin-bottom: 10px;">Cek Potensi Kerugian Dapur Anda</h2>
+            <p style="color: #bdc3c7; margin-bottom: 30px;">Banyak owner kuliner tidak sadar uangnya "dibuang" di tempat sampah akibat stok bocor dan busuk.</p>
+            
+            <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px; text-align: left;">
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px;">Omset Bulanan Outlet Anda: <span id="omset-val" style="color: #1abc9c; font-weight: bold;">Rp 50,000,000</span></label>
+                    <input type="range" id="omset-range" min="10000000" max="300000000" step="5000000" value="50000000" style="width: 100%; accent-color: #1abc9c;">
+                </div>
+                
+                <div style="margin-bottom: 25px;">
+                    <label style="display: block; margin-bottom: 8px;">Perkiraan Bahan Terbuang/Bocor (Waste Rate): <span id="waste-val" style="color: #e74c3c; font-weight: bold;">5%</span></label>
+                    <input type="range" id="waste-range" min="2" max="20" step="1" value="5" style="width: 100%; accent-color: #e74c3c;">
+                </div>
+                
+                <div style="background: rgba(26, 188, 156, 0.1); border-left: 4px solid #1abc9c; padding: 15px; border-radius: 4px; text-align: center;">
+                    <p style="margin: 0; font-size: 0.95rem; color: #bdc3c7;">Uang Anda yang Terbuang Sia-sia Sebulan:</p>
+                    <h3 id="loss-result" style="margin: 5px 0 0 0; color: #ef5757; font-size: 1.8rem;">Rp 2,500,000</h3>
+                    <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: #1abc9c; font-weight: bold;">Dengan Aterox, kerugian ini bisa dipangkas hingga 80%!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section" style="padding: 80px 20px; background: #f9f9f9; text-align: center;">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <h2 style="color: #2c3e50; margin-bottom: 10px;">Skema Harga Yang Transparan</h2>
+            <p style="color: #7f8c8d; margin-bottom: 40px;">Mulai gratis untuk outlet pertama Anda. Upgrade kapan saja sesuai pertumbuhan bisnis.</p>
+            
+            <div class="pricing-grid" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center;">
+                <div class="price-card" style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); width: 300px; text-align: left; border: 1px solid #eef2f5;">
+                    <h3 style="color: #2c3e50; margin-top: 0;">Starter (UMKM)</h3>
+                    <p style="color: #7f8c8d; font-size: 0.9rem;">Cocok untuk rintisan kedai kopi tunggal atau umkm baru.</p>
+                    <div style="margin: 20px 0;"><span style="font-size: 1.8rem; font-weight: bold; color: #2c3e50;">Gratis</span><span style="color: #7f8c8d;"> / Selamanya</span></div>
+                    <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+                    <ul style="list-style: none; padding: 0; margin: 0 0 30px 0; color: #555; font-size: 0.9rem; line-height: 2;">
+                        <li>✓ 1 Outlet Maksimal</li>
+                        <li>✓ Kelola Stok Masuk & Keluar</li>
+                        <li>✓ Fitur Kasir & Dapur Basic</li>
+                        <li style="color: #ccc; text-decoration: line-through;">✕ Smart HPP & Waste Analytics</li>
+                    </ul>
+                    <button style="width: 100%; padding: 10px; border: 2px solid #1abc9c; background: transparent; color: #1abc9c; font-weight: bold; border-radius: 6px; cursor: pointer;">Mulai Sekarang</button>
+                </div>
+                
+                <div class="price-card" style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(26,188,156,0.15); width: 300px; text-align: left; border: 2px solid #1abc9c; position: relative;">
+                    <span style="position: absolute; top: -12px; right: 20px; background: #1abc9c; color: #fff; padding: 4px 12px; font-size: 0.75rem; font-weight: bold; border-radius: 20px;">PALING POPULER</span>
+                    <h3 style="color: #2c3e50; margin-top: 0;">Pro Grow</h3>
+                    <p style="color: #7f8c8d; font-size: 0.9rem;">Pilihan terbaik untuk kafe dan restoran aktif yang mau scale up.</p>
+                    <div style="margin: 20px 0;"><span style="font-size: 1.8rem; font-weight: bold; color: #2c3e50;">Rp 249k</span><span style="color: #7f8c8d;"> / bulan</span></div>
+                    <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+                    <ul style="list-style: none; padding: 0; margin: 0 0 30px 0; color: #555; font-size: 0.9rem; line-height: 2;">
+                        <li>✓ Up to 5 Outlet</li>
+                        <li>✓ Real-Time Stock Synchronization</li>
+                        <li>✓ <strong>Smart HPP & Waste Analytics</strong></li>
+                        <li>✓ Scan Barcode Bahan Mobile App</li>
+                        <li>✓ Laporan Export PDF & Excel</li>
+                    </ul>
+                    <button style="width: 100%; padding: 10px; border: none; background: #1abc9c; color: #fff; font-weight: bold; border-radius: 6px; cursor: pointer; box-shadow: 0 4px 10px rgba(26,188,156,0.3);">Coba Gratis 14 Hari</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section" style="padding: 80px 20px; background: #fff;">
+        <div style="max-width: 750px; margin: 0 auto;">
+            <h2 style="text-align: center; color: #2c3e50; margin-bottom: 40px;">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item" style="border-bottom: 1px solid #eef2f5; padding: 15px 0;">
+                    <button class="faq-toggle" style="width: 100%; background: none; border: none; text-align: left; font-size: 1.05rem; font-weight: bold; color: #2c3e50; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 10px 0;">
+                        <span>Apakah aplikasi mobile-nya bisa diakses kalau Wi-Fi dapur mati (Offline Mode)?</span>
+                        <span class="faq-icon" style="transition: transform 0.3s;">+</span>
+                    </button>
+                    <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; color: #7f8c8d; font-size: 0.95rem; padding-left: 2px;">
+                        <p style="margin: 10px 0 5px 0;">Bisa banget! Aplikasi mobile Flutter Aterox dirancang dengan sistem local-caching. Staf tetap bisa melakukan stock opname, scan bahan masuk, dan input laporan waste secara offline. Begitu HP tersambung ke internet, data otomatis tersinkronisasi ke Web Admin secara aman.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="border-bottom: 1px solid #eef2f5; padding: 15px 0;">
+                    <button class="faq-toggle" style="width: 100%; background: none; border: none; text-align: left; font-size: 1.05rem; font-weight: bold; color: #2c3e50; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 10px 0;">
+                        <span>Bagaimana Aterox bisa menghitung HPP secara otomatis?</span>
+                        <span class="faq-icon" style="transition: transform 0.3s;">+</span>
+                    </button>
+                    <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; color: #7f8c8d; font-size: 0.95rem; padding-left: 2px;">
+                        <p style="margin: 10px 0 5px 0;">Sistem kami merekam harga beli dari setiap nota purchasing bahan baku yang masuk ke outlet. Ketika Anda memasukkan resep menu, sistem secara otomatis mengalikan volume bahan yang terpakai dengan harga bahan real-time, memberikan Anda angka Food Cost & HPP yang akurat tanpa Excel rumit.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="border-bottom: 1px solid #eef2f5; padding: 15px 0;">
+                    <button class="faq-toggle" style="width: 100%; background: none; border: none; text-align: left; font-size: 1.05rem; font-weight: bold; color: #2c3e50; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 10px 0;">
+                        <span>Apakah data stok outlet saya aman dari kebocoran?</span>
+                        <span class="faq-icon" style="transition: transform 0.3s;">+</span>
+                    </button>
+                    <div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; color: #7f8c8d; font-size: 0.95rem; padding-left: 2px;">
+                        <p style="margin: 10px 0 5px 0;">Keamanan data adalah prioritas utama kami di Xynco Labs. Seluruh data transaksi di-enkripsi penuh dan database kami dipisahkan dengan aturan hak akses (role-based access control). Kru outlet Sidoarjo tidak akan bisa melihat atau memanipulasi data inventaris outlet daerah lain.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
   </main>
 
 

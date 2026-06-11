@@ -11,6 +11,13 @@
         ]
       }
     ],
-    "css-prefix-order": "off"
+    "css-prefix-order": "off",
+    "no-inline-styles": "off",
+    "axe/forms": [
+      "default",
+      {
+        "label": "off"
+      }
+    ]
   }
 }

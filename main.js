@@ -185,3 +185,57 @@
   }
 
 })();
+
+// ==================== LOGIKA KALKULATOR KERUGIAN ====================
+const omsetRange = document.getElementById('omset-range');
+const wasteRange = document.getElementById('waste-range');
+const omsetVal = document.getElementById('omset-val');
+const wasteVal = document.getElementById('waste-val');
+const lossResult = document.getElementById('loss-result');
+
+function hitungKerugian() {
+    const omset = parseInt(omsetRange.value);
+    const wastePercent = parseInt(wasteRange.value);
+    
+    // Update Teks Tampilan Slider
+    omsetVal.innerText = 'Rp ' + omset.toLocaleString('id-ID');
+    wasteVal.innerText = wastePercent + '%';
+    
+    // Hitung Estimasi Kerugian Mentah
+    const totalLoss = omset * (wastePercent / 100);
+    lossResult.innerText = 'Rp ' + totalLoss.toLocaleString('id-ID');
+}
+
+if(omsetRange && wasteRange) {
+    omsetRange.addEventListener('input', hitungKerugian);
+    wasteRange.addEventListener('input', hitungKerugian);
+}
+
+// ==================== LOGIKA FAQ ACCORDION ====================
+const faqToggles = document.querySelectorAll('.faq-toggle');
+
+faqToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+        const content = toggle.nextElementSibling;
+        const icon = toggle.querySelector('.faq-icon');
+        
+        // Cek apakah item ini sudah terbuka
+        if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+            content.style.maxHeight = '0px';
+            icon.innerText = '+';
+            icon.style.transform = 'rotate(0deg)';
+        } else {
+            // Tutup semua FAQ lain yang mungkin kebuka (Optional, biar rapi)
+            document.querySelectorAll('.faq-content').forEach(el => el.style.maxHeight = '0px');
+            document.querySelectorAll('.faq-icon').forEach(el => {
+                el.innerText = '+';
+                el.style.transform = 'rotate(0deg)';
+            });
+            
+            // Buka item yang di-klik
+            content.style.maxHeight = content.scrollHeight + 'px';
+            icon.innerText = '-';
+            icon.style.transform = 'rotate(180deg)';
+        }
+    });
+});
