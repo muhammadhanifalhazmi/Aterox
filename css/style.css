@@ -1508,7 +1508,15 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: 6px;
   cursor: pointer;
   font-family: var(--atx-font);
+  text-decoration: none;
+  display: block;
+  text-align: center;
   transition: background var(--t-fast), color var(--t-fast);
+}
+
+a.atx-btn-price:hover {
+  background: var(--atx-primary);
+  color: var(--atx-white);
 }
 
 .atx-btn-price:hover {
